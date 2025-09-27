@@ -20,7 +20,7 @@ import './App.css';
 function App() {
   return (
    <main>
-    <h1 className="title">this is an app model</h1>
+    <h1 className="title">this is the app ROOT</h1>
    </main>
   );
 }
@@ -79,6 +79,10 @@ while True:
     if project_tech_type =="r" or project_tech_type =="R" :
       write_command(f"npx create-react-app {project_name}")
       change_path(project_name)
+      comp_model=open(f"src/App.js",'w')
+      comp_model.write(src_defult_content())
+      comp_model.close()
+
       for c in range(project_comps):
           create_path(f"src/comp_{str(c)}")
           write_command(f"nul>src/comp_{str(c)}/comp_obj.js")
