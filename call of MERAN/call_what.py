@@ -49,24 +49,24 @@ function Comp_number_{str(num)} () {function_content}
 
 
 def Page_default_content(num):
-    page_content=f"""
+    page_content="{"+f"""
  return (
     <div>
       <h1>Page {str(num)}</h1>
       <p>Welcome to the page {str(num)}</p>
     </div>
   );
-"""
+"""+"}"
     print("adding PAGE defualt content")
-    return f"""
+    return "{"+f"""
 import React from 'react';
 
 const page_{str(num)} = () => {
  page_content
 };
 
-export default About;
-"""
+export default page_{str(num)};
+"""+"}"
 
 
 
